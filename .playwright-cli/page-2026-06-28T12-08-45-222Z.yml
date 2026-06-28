@@ -1,0 +1,140 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - link "Channel Essence 잠들기전 교양이 Research" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e11]:
+            - generic [ref=e12]: Channel Essence
+            - generic [ref=e13]: 잠들기전 교양이 Research
+        - navigation [ref=e14]:
+          - link "Dashboard" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img [ref=e16]
+            - generic [ref=e19]: Dashboard
+          - link "Category Explorer" [ref=e20] [cursor=pointer]:
+            - /url: /categories
+            - img [ref=e21]
+            - generic [ref=e24]: Category Explorer
+          - link "Channels" [ref=e25] [cursor=pointer]:
+            - /url: /channels
+            - img [ref=e26]
+            - generic [ref=e28]: Channels
+          - link "Insight Board" [ref=e29] [cursor=pointer]:
+            - /url: /insights
+            - img [ref=e30]
+            - generic [ref=e32]: Insight Board
+          - link "Strategy Generator" [active] [ref=e33] [cursor=pointer]:
+            - /url: /strategy
+            - img [ref=e34]
+            - generic [ref=e36]: Strategy Generator
+          - link "Settings" [ref=e37] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e38]
+            - generic [ref=e41]: Settings
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: MVP 3
+          - paragraph [ref=e44]: YouTube API 데이터에 OpenAI 분석을 연결합니다. 생성 결과는 로컬 분석 저장소에 보관됩니다.
+    - main [ref=e45]:
+      - generic [ref=e257]:
+        - generic [ref=e259]:
+          - paragraph [ref=e260]: Strategy Generator
+          - heading "분석 패턴을 영상 기획안으로 바꾸기" [level=1] [ref=e261]
+          - paragraph [ref=e262]: 실제 분석 데이터가 없으면 데이터 없음 상태만 표시합니다. 이후 AI 분석 결과가 연결되면 실제 전략 결과를 생성합니다.
+        - generic [ref=e263]:
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - paragraph [ref=e266]: Strategy Input
+              - heading "영상 기획 입력값" [level=2] [ref=e267]
+              - paragraph [ref=e268]: 실제 분석 데이터가 연결되기 전까지 결과 영역은 비워둡니다.
+            - generic [ref=e269]:
+              - generic [ref=e270]:
+                - generic [ref=e271]: 카테고리
+                - combobox "카테고리" [ref=e272]:
+                  - option "책 / 독서" [selected]
+                  - option "인문학 / 교양"
+                  - option "철학"
+                  - option "심리학"
+                  - option "자기계발"
+                  - option "커리어"
+                  - option "IT / 테크"
+                  - option "경제 / 비즈니스"
+                  - option "지식 큐레이션"
+              - generic [ref=e273]:
+                - generic [ref=e274]: 책 제목
+                - textbox "책 제목" [ref=e275]:
+                  - /placeholder: "예: 불안의 책"
+              - generic [ref=e276]:
+                - generic [ref=e277]: 주제
+                - textbox "주제" [ref=e278]:
+                  - /placeholder: "예: 불안한 시대에 나를 지키는 법"
+              - generic [ref=e279]:
+                - generic [ref=e280]: 원하는 톤
+                - textbox "원하는 톤" [ref=e281]:
+                  - /placeholder: "예: 차분하고 지적인"
+              - generic [ref=e282]:
+                - generic [ref=e283]: 타겟 시청자
+                - textbox "타겟 시청자" [ref=e284]:
+                  - /placeholder: "예: 잠들기 전 조용한 교양을 듣고 싶은 직장인"
+            - button "실제 데이터로 생성 시도" [ref=e285]:
+              - img [ref=e286]
+              - text: 실제 데이터로 생성 시도
+          - generic [ref=e289]:
+            - generic [ref=e290]:
+              - paragraph [ref=e291]: 입력 요약
+              - generic [ref=e293]: 책 / 독서
+              - paragraph [ref=e294]: 입력값을 바탕으로 영상 아이디어를 생성하고 인사이트 보드에 저장합니다.
+            - generic [ref=e295]:
+              - heading "영상 콘셉트" [level=2] [ref=e298]
+              - generic [ref=e299]:
+                - paragraph [ref=e300]: 데이터 없음
+                - paragraph [ref=e301]: 입력값을 작성한 뒤 생성 버튼을 눌러주세요.
+            - generic [ref=e302]:
+              - paragraph [ref=e303]: Planning Archive
+              - heading "영상 기획안 저장" [level=3] [ref=e304]
+              - generic [ref=e305]:
+                - generic [ref=e306]:
+                  - generic [ref=e307]: 기획안 제목
+                  - textbox "기획안 제목" [ref=e308]:
+                    - /placeholder: 저장할 기획안 이름
+                - generic [ref=e309]:
+                  - paragraph [ref=e310]: 제목 후보 비교
+                  - generic [ref=e311]:
+                    - textbox "제목 후보 1" [ref=e312]
+                    - combobox [ref=e313]:
+                      - option "5점" [selected]
+                      - option "4점"
+                      - option "3점"
+                      - option "2점"
+                      - option "1점"
+                    - textbox "비교 메모" [ref=e314]
+                  - generic [ref=e315]:
+                    - textbox "제목 후보 2" [ref=e316]
+                    - combobox [ref=e317]:
+                      - option "5점"
+                      - option "4점" [selected]
+                      - option "3점"
+                      - option "2점"
+                      - option "1점"
+                    - textbox "비교 메모" [ref=e318]
+                  - generic [ref=e319]:
+                    - textbox "제목 후보 3" [ref=e320]
+                    - combobox [ref=e321]:
+                      - option "5점"
+                      - option "4점"
+                      - option "3점" [selected]
+                      - option "2점"
+                      - option "1점"
+                    - textbox "비교 메모" [ref=e322]
+                - generic [ref=e323]:
+                  - generic [ref=e324]: 썸네일 방향성 메모
+                  - textbox "썸네일 방향성 메모" [ref=e325]:
+                    - /placeholder: "예: 어두운 배경, 따뜻한 조명, 책 표지보다 감정 키워드를 크게"
+                - button "기획안 저장" [ref=e326]:
+                  - img [ref=e327]
+                  - text: 기획안 저장
+              - generic [ref=e331]:
+                - heading "저장된 기획안" [level=4] [ref=e332]
+                - paragraph [ref=e333]: 아직 저장된 영상 기획안이 없습니다.
+  - alert [ref=e256]

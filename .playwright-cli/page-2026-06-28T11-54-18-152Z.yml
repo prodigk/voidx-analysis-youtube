@@ -1,0 +1,111 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - link "Channel Essence 잠들기전 교양이 Research" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e11]:
+            - generic [ref=e12]: Channel Essence
+            - generic [ref=e13]: 잠들기전 교양이 Research
+        - navigation [ref=e14]:
+          - link "Dashboard" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img [ref=e16]
+            - generic [ref=e19]: Dashboard
+          - link "Category Explorer" [ref=e20] [cursor=pointer]:
+            - /url: /categories
+            - img [ref=e21]
+            - generic [ref=e24]: Category Explorer
+          - link "Channels" [ref=e25] [cursor=pointer]:
+            - /url: /channels
+            - img [ref=e26]
+            - generic [ref=e28]: Channels
+          - link "Insight Board" [ref=e29] [cursor=pointer]:
+            - /url: /insights
+            - img [ref=e30]
+            - generic [ref=e32]: Insight Board
+          - link "Strategy Generator" [ref=e33] [cursor=pointer]:
+            - /url: /strategy
+            - img [ref=e34]
+            - generic [ref=e36]: Strategy Generator
+          - link "Settings" [ref=e37] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e38]
+            - generic [ref=e41]: Settings
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: MVP 3
+          - paragraph [ref=e44]: YouTube API 데이터에 OpenAI 분석을 연결합니다. 생성 결과는 로컬 분석 저장소에 보관됩니다.
+    - main [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e48]:
+          - paragraph [ref=e49]: Category Explorer
+          - heading "카테고리별 실제 YouTube 후보 채널 검색" [level=1] [ref=e50]
+          - paragraph [ref=e51]: 카테고리 preset과 검색어를 바탕으로 YouTube API에서 실제 후보 채널을 불러옵니다. 저장된 데이터가 없으면 데이터 없음 상태만 표시합니다.
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - generic [ref=e54]:
+              - generic [ref=e55]:
+                - generic [ref=e56]: 카테고리 선택
+                - combobox "카테고리 선택" [ref=e57]:
+                  - option "책 / 독서" [selected]
+                  - option "인문학 / 교양"
+                  - option "철학"
+                  - option "심리학"
+                  - option "자기계발"
+                  - option "커리어"
+                  - option "IT / 테크"
+                  - option "경제 / 비즈니스"
+                  - option "지식 큐레이션"
+              - generic [ref=e59]:
+                - img [ref=e61]
+                - generic [ref=e64]:
+                  - paragraph [ref=e65]: 실제 YouTube 검색
+                  - paragraph [ref=e66]: 아래 검색 버튼을 눌렀을 때만 YouTube API 데이터를 불러옵니다.
+            - generic [ref=e67]:
+              - generic [ref=e68]:
+                - heading "책 / 독서" [level=2] [ref=e69]
+                - paragraph [ref=e70]: 책 요약, 독서 습관, 인문 교양 큐레이션 채널을 검색하고 비교합니다.
+                - generic [ref=e71]:
+                  - generic [ref=e72]: 책요약
+                  - generic [ref=e73]: 독서
+                  - generic [ref=e74]: 북튜브
+                  - generic [ref=e75]: 고전
+                  - generic [ref=e76]: 교양
+              - generic [ref=e77]:
+                - paragraph [ref=e78]: 카테고리 요약
+                - generic [ref=e79]:
+                  - generic [ref=e80]:
+                    - term [ref=e81]: 경쟁 강도
+                    - definition [ref=e82]: 높음
+                  - generic [ref=e83]:
+                    - term [ref=e84]: 검색 방향
+                    - definition [ref=e85]: 한 권 요약보다 여러 관점을 엮는 주제형 교양 콘텐츠
+          - generic [ref=e87]:
+            - generic [ref=e88]:
+              - paragraph [ref=e89]: YouTube API
+              - heading "카테고리별 후보 채널 검색" [level=2] [ref=e90]
+              - paragraph [ref=e91]: 책 / 독서 카테고리 키워드로 실제 YouTube 채널 후보를 검색하고 구독자 수 기준으로 정렬합니다.
+            - generic [ref=e92]:
+              - generic [ref=e93]:
+                - img [ref=e94]
+                - textbox [ref=e97]:
+                  - /placeholder: 검색어 비우면 카테고리 키워드 사용
+              - button "검색" [ref=e98]:
+                - img [ref=e99]
+                - text: 검색
+          - generic [ref=e104]:
+            - generic [ref=e106]:
+              - heading "저장된 채널 비교" [level=2] [ref=e107]
+              - paragraph [ref=e108]: DB 저장 기능이 연결되면 실제로 저장한 채널만 표시됩니다.
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: 데이터 없음
+              - paragraph [ref=e111]: 아직 저장된 채널 데이터가 없습니다.
+          - generic [ref=e112]:
+            - generic [ref=e114]:
+              - heading "카테고리 공통 패턴" [level=2] [ref=e115]
+              - paragraph [ref=e116]: 실제 분석 결과가 없으면 가짜 패턴을 표시하지 않습니다.
+            - generic [ref=e117]:
+              - paragraph [ref=e118]: 데이터 없음
+              - paragraph [ref=e119]: 아직 불러온 분석 데이터가 없습니다.
+  - alert [ref=e120]

@@ -1,0 +1,67 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - link "Channel Essence 잠들기전 교양이 Research" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e11]:
+            - generic [ref=e12]: Channel Essence
+            - generic [ref=e13]: 잠들기전 교양이 Research
+        - navigation [ref=e14]:
+          - link "Dashboard" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img [ref=e16]
+            - generic [ref=e19]: Dashboard
+          - link "Category Explorer" [ref=e20] [cursor=pointer]:
+            - /url: /categories
+            - img [ref=e21]
+            - generic [ref=e24]: Category Explorer
+          - link "Channels" [active] [ref=e25] [cursor=pointer]:
+            - /url: /channels
+            - img [ref=e26]
+            - generic [ref=e28]: Channels
+          - link "Insight Board" [ref=e29] [cursor=pointer]:
+            - /url: /insights
+            - img [ref=e30]
+            - generic [ref=e32]: Insight Board
+          - link "Strategy Generator" [ref=e33] [cursor=pointer]:
+            - /url: /strategy
+            - img [ref=e34]
+            - generic [ref=e36]: Strategy Generator
+          - link "Settings" [ref=e37] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e38]
+            - generic [ref=e41]: Settings
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: MVP 3
+          - paragraph [ref=e44]: YouTube API 데이터에 OpenAI 분석을 연결합니다. 생성 결과는 로컬 분석 저장소에 보관됩니다.
+    - main [ref=e45]:
+      - generic [ref=e768]:
+        - generic [ref=e769]:
+          - generic [ref=e770]:
+            - paragraph [ref=e771]: Channels
+            - heading "실제 채널 데이터 조회" [level=1] [ref=e772]
+            - paragraph [ref=e773]: 저장된 채널 목록이 없으면 가짜 목록을 표시하지 않습니다. YouTube 핸들, 채널 URL, 채널 ID를 입력해 실제 데이터를 불러오세요.
+          - link "카테고리로 검색" [ref=e774] [cursor=pointer]:
+            - /url: /categories
+            - text: 카테고리로 검색
+            - img [ref=e775]
+        - generic [ref=e778]:
+          - generic [ref=e779]:
+            - paragraph [ref=e780]: Data Refresh
+            - heading "YouTube API로 최신 데이터 확인" [level=2] [ref=e781]
+            - paragraph [ref=e782]: 채널 통계, 최근 영상, 인기 영상을 한 번에 불러옵니다.
+          - generic [ref=e783]:
+            - textbox "@handle, 채널 URL, 채널 ID" [ref=e784]
+            - button "새로고침" [disabled] [ref=e785]:
+              - img [ref=e786]
+              - text: 새로고침
+        - generic [ref=e791]:
+          - generic [ref=e793]:
+            - heading "Channel Inventory" [level=2] [ref=e794]
+            - paragraph [ref=e795]: DB 저장 기능이 연결되면 실제로 저장한 채널만 여기에 표시됩니다.
+          - generic [ref=e796]:
+            - paragraph [ref=e797]: 데이터 없음
+            - paragraph [ref=e798]: 아직 저장된 채널 데이터가 없습니다.
+  - alert [ref=e120]

@@ -1,0 +1,266 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e5]:
+        - link "Channel Essence 잠들기전 교양이 Research" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e8]
+          - generic [ref=e11]:
+            - generic [ref=e12]: Channel Essence
+            - generic [ref=e13]: 잠들기전 교양이 Research
+        - navigation [ref=e14]:
+          - link "Dashboard" [ref=e15] [cursor=pointer]:
+            - /url: /
+            - img [ref=e16]
+            - generic [ref=e19]: Dashboard
+          - link "Category Explorer" [active] [ref=e20] [cursor=pointer]:
+            - /url: /categories
+            - img [ref=e21]
+            - generic [ref=e24]: Category Explorer
+          - link "Channels" [ref=e25] [cursor=pointer]:
+            - /url: /channels
+            - img [ref=e26]
+            - generic [ref=e28]: Channels
+          - link "Insight Board" [ref=e29] [cursor=pointer]:
+            - /url: /insights
+            - img [ref=e30]
+            - generic [ref=e32]: Insight Board
+          - link "Strategy Generator" [ref=e33] [cursor=pointer]:
+            - /url: /strategy
+            - img [ref=e34]
+            - generic [ref=e36]: Strategy Generator
+          - link "Settings" [ref=e37] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e38]
+            - generic [ref=e41]: Settings
+        - generic [ref=e42]:
+          - paragraph [ref=e43]: MVP 3
+          - paragraph [ref=e44]: YouTube API 데이터에 OpenAI 분석을 연결합니다. 생성 결과는 로컬 분석 저장소에 보관됩니다.
+    - main [ref=e45]:
+      - generic [ref=e509]:
+        - generic [ref=e511]:
+          - paragraph [ref=e512]: Category Explorer
+          - heading "카테고리별 실제 YouTube 후보 채널 검색" [level=1] [ref=e513]
+          - paragraph [ref=e514]: 카테고리 preset과 검색어를 바탕으로 YouTube API에서 실제 후보 채널을 불러옵니다. 저장된 데이터가 없으면 데이터 없음 상태만 표시합니다.
+        - generic [ref=e515]:
+          - generic [ref=e516]:
+            - generic [ref=e517]:
+              - generic [ref=e518]:
+                - generic [ref=e519]: 카테고리 선택
+                - combobox "카테고리 선택" [ref=e520]:
+                  - option "책 / 독서" [selected]
+                  - option "인문학 / 교양"
+                  - option "철학"
+                  - option "심리학"
+                  - option "자기계발"
+                  - option "커리어"
+                  - option "IT / 테크"
+                  - option "경제 / 비즈니스"
+                  - option "지식 큐레이션"
+              - generic [ref=e522]:
+                - img [ref=e524]
+                - generic [ref=e527]:
+                  - paragraph [ref=e528]: 실제 YouTube 검색
+                  - paragraph [ref=e529]: 아래 검색 버튼을 눌렀을 때만 YouTube API 데이터를 불러옵니다.
+            - generic [ref=e530]:
+              - generic [ref=e531]:
+                - heading "책 / 독서" [level=2] [ref=e532]
+                - paragraph [ref=e533]: 책 요약, 독서 습관, 인문 교양 큐레이션 채널을 검색하고 비교합니다.
+                - generic [ref=e534]:
+                  - generic [ref=e535]: 책요약
+                  - generic [ref=e536]: 독서
+                  - generic [ref=e537]: 북튜브
+                  - generic [ref=e538]: 고전
+                  - generic [ref=e539]: 교양
+              - generic [ref=e540]:
+                - paragraph [ref=e541]: 카테고리 요약
+                - generic [ref=e542]:
+                  - generic [ref=e543]:
+                    - term [ref=e544]: 경쟁 강도
+                    - definition [ref=e545]: 높음
+                  - generic [ref=e546]:
+                    - term [ref=e547]: 검색 방향
+                    - definition [ref=e548]: 한 권 요약보다 여러 관점을 엮는 주제형 교양 콘텐츠
+          - generic [ref=e549]:
+            - generic [ref=e550]:
+              - generic [ref=e551]:
+                - paragraph [ref=e552]: YouTube API
+                - heading "카테고리별 후보 채널 검색" [level=2] [ref=e553]
+                - paragraph [ref=e554]: 책 / 독서 카테고리 키워드로 실제 YouTube 채널 후보를 검색하고 구독자 수 기준으로 정렬합니다.
+              - generic [ref=e555]:
+                - generic [ref=e556]:
+                  - img [ref=e557]
+                  - textbox [ref=e560]:
+                    - /placeholder: 검색어 비우면 카테고리 키워드 사용
+                - button "검색" [ref=e561]:
+                  - img [ref=e562]
+                  - text: 검색
+            - paragraph [ref=e567]: 8개 후보를 불러왔습니다.
+            - generic [ref=e568]:
+              - generic [ref=e569]:
+                - paragraph [ref=e570]: 구독자수 기준 후보 채널 랭킹
+                - paragraph [ref=e571]: 비공개 구독자 수는 랭킹 하단으로 정렬됩니다.
+              - table [ref=e573]:
+                - rowgroup [ref=e574]:
+                  - row "Rank Channel Subscribers Total Views Videos Link" [ref=e575]:
+                    - columnheader "Rank" [ref=e576]
+                    - columnheader "Channel" [ref=e577]
+                    - columnheader "Subscribers" [ref=e578]
+                    - columnheader "Total Views" [ref=e579]
+                    - columnheader "Videos" [ref=e580]
+                    - columnheader "Link" [ref=e581]
+                - rowgroup [ref=e582]:
+                  - row "1 책읽는 자작나무 @책읽는자작나무 46.5만 8519.2만 469 YouTube" [ref=e583]:
+                    - cell "1" [ref=e584]:
+                      - generic [ref=e585]: "1"
+                    - cell "책읽는 자작나무 @책읽는자작나무" [ref=e586]:
+                      - link "책읽는 자작나무 @책읽는자작나무" [ref=e588] [cursor=pointer]:
+                        - /url: /channels/UCPhvyjw3ZrfxjEv6d5xE-7Q
+                        - heading "책읽는 자작나무" [level=3] [ref=e589]
+                        - paragraph [ref=e590]: "@책읽는자작나무"
+                    - cell "46.5만" [ref=e591]
+                    - cell "8519.2만" [ref=e592]
+                    - cell "469" [ref=e593]
+                    - cell "YouTube" [ref=e594]:
+                      - link "YouTube" [ref=e595] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UCPhvyjw3ZrfxjEv6d5xE-7Q
+                        - text: YouTube
+                        - img [ref=e596]
+                  - row "2 책읽는다락방 J @책읽는다락방j 25.3만 4096.5만 489 YouTube" [ref=e600]:
+                    - cell "2" [ref=e601]:
+                      - generic [ref=e602]: "2"
+                    - cell "책읽는다락방 J @책읽는다락방j" [ref=e603]:
+                      - link "책읽는다락방 J @책읽는다락방j" [ref=e605] [cursor=pointer]:
+                        - /url: /channels/UCFgsa4kjz6P0MLQHEvQpsRQ
+                        - heading "책읽는다락방 J" [level=3] [ref=e606]
+                        - paragraph [ref=e607]: "@책읽는다락방j"
+                    - cell "25.3만" [ref=e608]
+                    - cell "4096.5만" [ref=e609]
+                    - cell "489" [ref=e610]
+                    - cell "YouTube" [ref=e611]:
+                      - link "YouTube" [ref=e612] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UCFgsa4kjz6P0MLQHEvQpsRQ
+                        - text: YouTube
+                        - img [ref=e613]
+                  - row "3 책 리뷰하는 핵심 노트 @dailybook1818 3.4만 126.4만 56 YouTube" [ref=e617]:
+                    - cell "3" [ref=e618]:
+                      - generic [ref=e619]: "3"
+                    - cell "책 리뷰하는 핵심 노트 @dailybook1818" [ref=e620]:
+                      - link "책 리뷰하는 핵심 노트 @dailybook1818" [ref=e622] [cursor=pointer]:
+                        - /url: /channels/UC8loq2g3YJVHHrQU0F29lpg
+                        - heading "책 리뷰하는 핵심 노트" [level=3] [ref=e623]
+                        - paragraph [ref=e624]: "@dailybook1818"
+                    - cell "3.4만" [ref=e625]
+                    - cell "126.4만" [ref=e626]
+                    - cell "56" [ref=e627]
+                    - cell "YouTube" [ref=e628]:
+                      - link "YouTube" [ref=e629] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UC8loq2g3YJVHHrQU0F29lpg
+                        - text: YouTube
+                        - img [ref=e630]
+                  - row "4 실버북 SilverBook @joonjoo2 5.1천 76.2만 213 YouTube" [ref=e634]:
+                    - cell "4" [ref=e635]:
+                      - generic [ref=e636]: "4"
+                    - cell "실버북 SilverBook @joonjoo2" [ref=e637]:
+                      - link "실버북 SilverBook @joonjoo2" [ref=e639] [cursor=pointer]:
+                        - /url: /channels/UCSFc5uy85gfxhcRa7O5O1Vw
+                        - heading "실버북 SilverBook" [level=3] [ref=e640]
+                        - paragraph [ref=e641]: "@joonjoo2"
+                    - cell "5.1천" [ref=e642]
+                    - cell "76.2만" [ref=e643]
+                    - cell "213" [ref=e644]
+                    - cell "YouTube" [ref=e645]:
+                      - link "YouTube" [ref=e646] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UCSFc5uy85gfxhcRa7O5O1Vw
+                        - text: YouTube
+                        - img [ref=e647]
+                  - row "5 독서의 품격 @독서의품격 207 5.1만 61 YouTube" [ref=e651]:
+                    - cell "5" [ref=e652]:
+                      - generic [ref=e653]: "5"
+                    - cell "독서의 품격 @독서의품격" [ref=e654]:
+                      - link "독서의 품격 @독서의품격" [ref=e656] [cursor=pointer]:
+                        - /url: /channels/UCkpO9CBWLZDwvjlbj7KsMCQ
+                        - heading "독서의 품격" [level=3] [ref=e657]
+                        - paragraph [ref=e658]: "@독서의품격"
+                    - cell "207" [ref=e659]
+                    - cell "5.1만" [ref=e660]
+                    - cell "61" [ref=e661]
+                    - cell "YouTube" [ref=e662]:
+                      - link "YouTube" [ref=e663] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UCkpO9CBWLZDwvjlbj7KsMCQ
+                        - text: YouTube
+                        - img [ref=e664]
+                  - row "6 독서록 @jinny-s6k 66 8.6만 138 YouTube" [ref=e668]:
+                    - cell "6" [ref=e669]:
+                      - generic [ref=e670]: "6"
+                    - cell "독서록 @jinny-s6k" [ref=e671]:
+                      - link "독서록 @jinny-s6k" [ref=e673] [cursor=pointer]:
+                        - /url: /channels/UCSUcL--37Fr2UkbtSdk9W-A
+                        - heading "독서록" [level=3] [ref=e674]
+                        - paragraph [ref=e675]: "@jinny-s6k"
+                    - cell "66" [ref=e676]
+                    - cell "8.6만" [ref=e677]
+                    - cell "138" [ref=e678]
+                    - cell "YouTube" [ref=e679]:
+                      - link "YouTube" [ref=e680] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UCSUcL--37Fr2UkbtSdk9W-A
+                        - text: YouTube
+                        - img [ref=e681]
+                  - row "7 독서 인텔리전스 @독서인텔리전스 53 2.1만 23 YouTube" [ref=e685]:
+                    - cell "7" [ref=e686]:
+                      - generic [ref=e687]: "7"
+                    - cell "독서 인텔리전스 @독서인텔리전스" [ref=e688]:
+                      - link "독서 인텔리전스 @독서인텔리전스" [ref=e690] [cursor=pointer]:
+                        - /url: /channels/UCx0mqPqfq_0YHlv8_x69myA
+                        - heading "독서 인텔리전스" [level=3] [ref=e691]
+                        - paragraph [ref=e692]: "@독서인텔리전스"
+                    - cell "53" [ref=e693]
+                    - cell "2.1만" [ref=e694]
+                    - cell "23" [ref=e695]
+                    - cell "YouTube" [ref=e696]:
+                      - link "YouTube" [ref=e697] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UCx0mqPqfq_0YHlv8_x69myA
+                        - text: YouTube
+                        - img [ref=e698]
+                  - row "8 Foxstoryroom @foxbookroom 0 527 2 YouTube" [ref=e702]:
+                    - cell "8" [ref=e703]:
+                      - generic [ref=e704]: "8"
+                    - cell "Foxstoryroom @foxbookroom" [ref=e705]:
+                      - link "Foxstoryroom @foxbookroom" [ref=e707] [cursor=pointer]:
+                        - /url: /channels/UC0SdrTVVFYqyFm4HSJCtSug
+                        - heading "Foxstoryroom" [level=3] [ref=e708]
+                        - paragraph [ref=e709]: "@foxbookroom"
+                    - cell "0" [ref=e710]
+                    - cell "527" [ref=e711]
+                    - cell "2" [ref=e712]
+                    - cell "YouTube" [ref=e713]:
+                      - link "YouTube" [ref=e714] [cursor=pointer]:
+                        - /url: https://www.youtube.com/channel/UC0SdrTVVFYqyFm4HSJCtSug
+                        - text: YouTube
+                        - img [ref=e715]
+            - generic [ref=e719]:
+              - paragraph [ref=e720]: AI Analysis
+              - heading "검색된 후보 채널로 인사이트 생성" [level=3] [ref=e721]
+              - paragraph [ref=e722]: 구독자수 랭킹 결과를 바탕으로 카테고리 인사이트와 채널 비교 분석을 저장합니다.
+              - generic [ref=e725]:
+                - button "카테고리 인사이트" [ref=e726]:
+                  - img [ref=e727]
+                  - text: 카테고리 인사이트
+                - button "채널 비교 분석" [ref=e739]:
+                  - img [ref=e740]
+                  - text: 채널 비교 분석
+          - generic [ref=e752]:
+            - generic [ref=e754]:
+              - heading "저장된 채널 비교" [level=2] [ref=e755]
+              - paragraph [ref=e756]: DB 저장 기능이 연결되면 실제로 저장한 채널만 표시됩니다.
+            - generic [ref=e757]:
+              - paragraph [ref=e758]: 데이터 없음
+              - paragraph [ref=e759]: 아직 저장된 채널 데이터가 없습니다.
+          - generic [ref=e760]:
+            - generic [ref=e762]:
+              - heading "카테고리 공통 패턴" [level=2] [ref=e763]
+              - paragraph [ref=e764]: 실제 분석 결과가 없으면 가짜 패턴을 표시하지 않습니다.
+            - generic [ref=e765]:
+              - paragraph [ref=e766]: 데이터 없음
+              - paragraph [ref=e767]: 아직 불러온 분석 데이터가 없습니다.
+  - alert [ref=e120]
