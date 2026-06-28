@@ -11,6 +11,18 @@ export function hasDatabase() {
   return Boolean(process.env.DATABASE_URL);
 }
 
+export function canUseFileFallback() {
+  return !process.env.VERCEL;
+}
+
+export function getStorageMode() {
+  if (hasDatabase()) {
+    return "postgres";
+  }
+
+  return canUseFileFallback() ? "file-fallback" : "missing-database";
+}
+
 export function getSql() {
   if (!process.env.DATABASE_URL) {
     throw new Error("DATABASE_URL 환경변수가 설정되지 않았습니다.");
@@ -70,6 +82,14 @@ export async function ensureDatabaseSchema() {
   `;
 
   schemaReady = true;
+}
+
+export function assertWritableStorage() {
+  if (!hasDatabase() && !canUseFileFallback()) {
+    throw new Error(
+      "DATABASE_URL 환경변수가 없어 운영 저장소를 사용할 수 없습니다. Vercel Marketplace에서 Neon 연결 상태를 확인하세요.",
+    );
+  }
 }
 
 export function toIsoString(value: unknown) {

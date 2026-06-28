@@ -54,3 +54,14 @@ npm run dev
 ```
 
 Open `http://localhost:3000`.
+
+## Vercel Verification
+
+After deploying to Vercel, confirm Neon storage is active:
+
+```bash
+npx vercel curl /api/health/storage
+```
+
+Expected storage mode is `postgres`. If it returns `missing-database`, check that
+the Neon Marketplace integration added `DATABASE_URL` to the deployment target.

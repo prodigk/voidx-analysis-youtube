@@ -8,6 +8,7 @@ import type {
   SavedVideoPlan,
 } from "@/lib/app-store-types";
 import {
+  assertWritableStorage,
   ensureDatabaseSchema,
   getSql,
   hasDatabase,
@@ -89,6 +90,7 @@ export async function getSavedChannels() {
     return rows.map(rowToChannel);
   }
 
+  assertWritableStorage();
   const store = await readStore();
 
   return [...store.channels].sort((a, b) => {
@@ -125,6 +127,7 @@ export async function saveChannel(channel: YouTubeChannelStats) {
     return rowToChannel(rows[0]);
   }
 
+  assertWritableStorage();
   const store = await readStore();
   const existing = store.channels.find((item) => item.id === channel.id);
   const now = new Date().toISOString();
@@ -164,6 +167,7 @@ export async function setChannelFavorite(channelId: string, favorite: boolean) {
     return rowToChannel(rows[0]);
   }
 
+  assertWritableStorage();
   const store = await readStore();
   const target = store.channels.find((item) => item.id === channelId);
 
@@ -203,6 +207,7 @@ export async function getVideoPlans() {
     return rows.map(rowToVideoPlan);
   }
 
+  assertWritableStorage();
   const store = await readStore();
 
   return [...store.videoPlans].sort((a, b) =>
@@ -262,6 +267,7 @@ export async function saveVideoPlan(
     return rowToVideoPlan(rows[0]);
   }
 
+  assertWritableStorage();
   const store = await readStore();
   const now = new Date().toISOString();
   const saved: SavedVideoPlan = {

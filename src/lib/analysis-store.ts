@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { SavedAnalysis } from "@/lib/analysis-types";
 import {
+  assertWritableStorage,
   ensureDatabaseSchema,
   getSql,
   hasDatabase,
@@ -47,6 +48,7 @@ export async function getSavedAnalyses() {
     return rows.map(rowToAnalysis);
   }
 
+  assertWritableStorage();
   await ensureStore();
   const raw = await readFile(storePath, "utf8");
 
@@ -98,6 +100,7 @@ export async function saveAnalysis(analysis: SavedAnalysis) {
     return analysis;
   }
 
+  assertWritableStorage();
   const analyses = await getSavedAnalyses();
   const next = [analysis, ...analyses].slice(0, 100);
 
@@ -120,6 +123,7 @@ export async function getSavedAnalysis(id: string) {
     return rows[0] ? rowToAnalysis(rows[0]) : null;
   }
 
+  assertWritableStorage();
   const analyses = await getSavedAnalyses();
 
   return analyses.find((analysis) => analysis.id === id) ?? null;
@@ -152,6 +156,7 @@ export async function updateAnalysisTags(id: string, tags: string[]) {
     return rowToAnalysis(rows[0]);
   }
 
+  assertWritableStorage();
   const analyses = await getSavedAnalyses();
   let updated: SavedAnalysis | null = null;
   const next = analyses.map((analysis) => {
