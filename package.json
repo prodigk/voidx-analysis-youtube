@@ -2,6 +2,9 @@
   "name": "voidx-analysis-youtube",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +13,6 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",
-    "@types/pdfkit": "^0.17.6",
     "lucide-react": "^1.21.0",
     "next": "16.2.9",
     "pdfkit": "^0.19.1",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pdfkit": "^0.17.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
