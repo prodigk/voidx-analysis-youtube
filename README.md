@@ -29,6 +29,39 @@ Neon을 연결하면 `DATABASE_URL`이 주입되고, 앱은 자동으로 Postgre
 로컬 개발에서 `DATABASE_URL`이 없으면 `data/*.json` 파일을 fallback 저장소로
 사용합니다. 이 fallback은 개발 편의용이며 운영 저장소가 아닙니다.
 
+Vercel production에서 만든 인사이트 리포트를 로컬에서 그대로 테스트하려면
+먼저 Vercel API에서 분석 결과를 로컬 fallback JSON으로 동기화합니다.
+
+```bash
+npm run sync:vercel-analyses
+npm run dev
+```
+
+이 명령은 `data/analysis-results.local.json`을 만들고, 로컬 앱은 이 파일이
+있을 때 기본 `data/analysis-results.json`보다 우선해서 읽습니다.
+
+Vercel DB 접속 정보가 읽기 가능한 환경이면 DB 환경변수를 로컬로 동기화해
+운영 DB를 직접 바라보게 할 수도 있습니다.
+
+```bash
+npm run sync:vercel-env
+npm run db:status
+npm run dev
+```
+
+`sync:vercel-env`는 Vercel production env를 받아오되, 로컬 실행에 필요한
+`DATABASE_URL`, Postgres, OpenAI, YouTube 키만 `.env.local`에 병합합니다.
+`VERCEL=true` 같은 배포 런타임 변수는 로컬 파일에 넣지 않습니다.
+민감 변수로 설정된 DB 값이 Vercel CLI에서 빈 값으로 내려오면, 이 명령은
+로컬 JSON fallback 사용을 방해하지 않도록 빈 DB 키를 저장하지 않습니다.
+
+Preview나 Development 환경을 보고 싶을 때는 다음처럼 실행할 수 있습니다.
+
+```bash
+node scripts/sync-vercel-env.mjs --preview
+node scripts/sync-vercel-env.mjs --development
+```
+
 ## Environment
 
 Create `.env.local` in the project root:

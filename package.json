@@ -9,7 +9,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:vercel-env": "node scripts/sync-vercel-env.mjs",
+    "sync:vercel-analyses": "node scripts/sync-vercel-analyses.mjs",
+    "db:status": "node scripts/check-vercel-db.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

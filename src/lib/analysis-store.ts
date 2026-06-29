@@ -1,5 +1,6 @@
 import "server-only";
 
+import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { SavedAnalysis } from "@/lib/analysis-types";
@@ -11,7 +12,16 @@ import {
   toIsoString,
 } from "@/lib/database";
 
-const storePath = path.join(process.cwd(), "data", "analysis-results.json");
+const defaultStorePath = path.join(
+  process.cwd(),
+  "data",
+  "analysis-results.json",
+);
+const localStorePath = path.join(
+  process.cwd(),
+  "data",
+  "analysis-results.local.json",
+);
 
 type AnalysisRow = {
   id: string;
@@ -25,6 +35,8 @@ type AnalysisRow = {
 };
 
 async function ensureStore() {
+  const storePath = getStorePath();
+
   await mkdir(path.dirname(storePath), { recursive: true });
 
   try {
@@ -32,6 +44,14 @@ async function ensureStore() {
   } catch {
     await writeFile(storePath, "[]\n", "utf8");
   }
+}
+
+function getStorePath() {
+  if (existsSync(localStorePath)) {
+    return localStorePath;
+  }
+
+  return defaultStorePath;
 }
 
 export async function getSavedAnalyses() {
@@ -50,6 +70,7 @@ export async function getSavedAnalyses() {
 
   assertWritableStorage();
   await ensureStore();
+  const storePath = getStorePath();
   const raw = await readFile(storePath, "utf8");
 
   try {
@@ -103,6 +124,7 @@ export async function saveAnalysis(analysis: SavedAnalysis) {
   assertWritableStorage();
   const analyses = await getSavedAnalyses();
   const next = [analysis, ...analyses].slice(0, 100);
+  const storePath = getStorePath();
 
   await writeFile(storePath, `${JSON.stringify(next, null, 2)}\n`, "utf8");
 
@@ -171,6 +193,8 @@ export async function updateAnalysisTags(id: string, tags: string[]) {
   if (!updated) {
     throw new Error("저장된 분석 결과를 찾지 못했습니다.");
   }
+
+  const storePath = getStorePath();
 
   await writeFile(storePath, `${JSON.stringify(next, null, 2)}\n`, "utf8");
 

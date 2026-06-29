@@ -1,6 +1,6 @@
 import { getSavedAnalyses } from "@/lib/analysis-store";
 import { analysisTypeLabels } from "@/lib/analysis-types";
-import { AnalysisResultCard } from "@/components/analysis-result-card";
+import { InsightBoardList } from "@/components/insight-board-list";
 import { EmptyState, PageHeader, Section, StatCard } from "@/components/ui-blocks";
 
 export const dynamic = "force-dynamic";
@@ -19,8 +19,8 @@ export default async function InsightsPage() {
     <div>
       <PageHeader
         eyebrow="Insight Board"
-        title="저장된 AI 분석 결과"
-        description="채널 분석, 카테고리 인사이트, 비교 분석, 적용 전략, 영상 아이디어 생성 결과를 저장된 순서대로 확인합니다."
+        title="분석 리포트 보드"
+        description="저장된 AI 분석 결과를 게시판처럼 정리합니다. 썸네일, 채널 지표, 주제 기준으로 훑어보고 상세 리포트로 들어가세요."
         action={{ href: "/categories", label: "YouTube 데이터 검색" }}
       />
 
@@ -35,13 +35,12 @@ export default async function InsightsPage() {
         ))}
       </section>
 
-      <Section title="Analysis Results">
+      <Section
+        title="Report List"
+        description="각 행을 누르면 해당 분석 리포트의 상세 내용을 볼 수 있습니다."
+      >
         {analyses.length > 0 ? (
-          <div className="grid gap-5">
-            {analyses.map((analysis) => (
-              <AnalysisResultCard key={analysis.id} analysis={analysis} />
-            ))}
-          </div>
+          <InsightBoardList analyses={analyses} />
         ) : (
           <EmptyState description="아직 저장된 AI 분석 결과가 없습니다." />
         )}
