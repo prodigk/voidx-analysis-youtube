@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSavedAnalysis } from "@/lib/analysis-store";
+import { requireApiUser } from "@/lib/auth";
 import { getAnalysisFilename } from "@/lib/export-format";
 import { analysisToPdfBuffer } from "@/lib/pdf-export";
 
@@ -7,6 +8,12 @@ export async function GET(
   _request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
+  const { response } = await requireApiUser();
+
+  if (response) {
+    return response;
+  }
+
   const { id } = await params;
   const analysis = await getSavedAnalysis(decodeURIComponent(id));
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { getSavedChannels } from "@/lib/app-store";
+import { requirePageUser } from "@/lib/auth";
 import { formatCompactNumber } from "@/lib/format";
 import { PageHeader, Section, EmptyState } from "@/components/ui-blocks";
 import { YouTubeRefreshPanel } from "@/components/youtube-refresh-panel";
@@ -9,6 +10,8 @@ import { FavoriteChannelToggle } from "@/components/favorite-channel-toggle";
 export const dynamic = "force-dynamic";
 
 export default async function ChannelsPage() {
+  await requirePageUser();
+
   const channels = await getSavedChannels();
 
   return (

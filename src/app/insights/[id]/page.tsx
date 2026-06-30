@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { notFound } from "next/navigation";
 import { ArrowLeft, CalendarDays, Eye, Users, Video } from "lucide-react";
 import { getSavedAnalysis } from "@/lib/analysis-store";
+import { requirePageUser } from "@/lib/auth";
 import { toAnalysisBoardItem } from "@/lib/analysis-presenter";
 import { AnalysisResultCard } from "@/components/analysis-result-card";
 import { Section } from "@/components/ui-blocks";
@@ -14,6 +15,8 @@ export default async function InsightDetailPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  await requirePageUser();
+
   const { id } = await params;
   const analysis = await getSavedAnalysis(decodeURIComponent(id));
 

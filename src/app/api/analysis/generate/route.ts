@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { AnalysisInput, AnalysisType, SavedAnalysis } from "@/lib/analysis-types";
 import { analysisTypeLabels } from "@/lib/analysis-types";
 import { saveAnalysis } from "@/lib/analysis-store";
+import { requireApiUser } from "@/lib/auth";
 import { generateAnalysis, getSourceLabel } from "@/lib/openai-analysis";
 
 const analysisTypes = new Set<AnalysisType>([
@@ -14,6 +15,12 @@ const analysisTypes = new Set<AnalysisType>([
 
 export async function POST(request: Request) {
   try {
+    const { response } = await requireApiUser();
+
+    if (response) {
+      return response;
+    }
+
     const body = (await request.json()) as {
       type?: AnalysisType;
       input?: AnalysisInput;

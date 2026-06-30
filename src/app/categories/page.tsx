@@ -1,7 +1,10 @@
 import { CategoryExplorer } from "@/components/category-explorer";
 import { PageHeader } from "@/components/ui-blocks";
+import { requirePageUser } from "@/lib/auth";
 
-export default function CategoriesPage() {
+export default async function CategoriesPage() {
+  await requirePageUser();
+
   return (
     <div>
       <PageHeader

@@ -1,7 +1,10 @@
 import { StrategyGenerator } from "@/components/strategy-generator";
 import { PageHeader } from "@/components/ui-blocks";
+import { requirePageUser } from "@/lib/auth";
 
-export default function StrategyPage() {
+export default async function StrategyPage() {
+  await requirePageUser();
+
   return (
     <div>
       <PageHeader

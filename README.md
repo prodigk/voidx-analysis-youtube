@@ -71,11 +71,16 @@ YOUTUBE_API_KEY=your_youtube_data_api_key
 OPENAI_API_KEY=your_openai_api_key
 OPENAI_MODEL=gpt-5.5
 DATABASE_URL=postgresql://...
+ADMIN_EMAIL=owner@example.com
 PDF_KOREAN_FONT_PATH=/path/to/korean-font.ttf
 ```
 
-API keys and `DATABASE_URL` are read only by server Route Handlers and are not
-exposed to the browser.
+API keys, `DATABASE_URL`, and `ADMIN_EMAIL` are read only by server Route
+Handlers and are not exposed to the browser.
+
+When member auth is enabled, create the first Admin account at
+`/signup/admin`. After that, new users must join through Admin-generated invite
+links.
 
 `PDF_KOREAN_FONT_PATH` is optional locally, but recommended on Vercel so Korean
 PDF exports can embed a stable TTF/OTF font.

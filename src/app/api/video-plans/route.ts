@@ -1,8 +1,15 @@
 import { NextResponse } from "next/server";
 import { getVideoPlans, saveVideoPlan } from "@/lib/app-store";
 import type { TitleCandidate } from "@/lib/app-store-types";
+import { requireApiUser } from "@/lib/auth";
 
 export async function GET() {
+  const { response } = await requireApiUser();
+
+  if (response) {
+    return response;
+  }
+
   const plans = await getVideoPlans();
 
   return NextResponse.json({ plans });
@@ -10,6 +17,12 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
+    const { response } = await requireApiUser();
+
+    if (response) {
+      return response;
+    }
+
     const body = (await request.json()) as {
       title?: string;
       categoryName?: string;

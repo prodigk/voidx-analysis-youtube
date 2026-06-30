@@ -1,11 +1,18 @@
 import { NextResponse } from "next/server";
 import { updateAnalysisTags } from "@/lib/analysis-store";
+import { requireApiUser } from "@/lib/auth";
 
 export async function PATCH(
   request: Request,
   { params }: { params: Promise<{ id: string }> },
 ) {
   try {
+    const { response } = await requireApiUser();
+
+    if (response) {
+      return response;
+    }
+
     const { id } = await params;
     const body = (await request.json()) as { tags?: string[] };
     const analysis = await updateAnalysisTags(

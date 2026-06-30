@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { getSavedAnalyses } from "@/lib/analysis-store";
+import { requirePageUser } from "@/lib/auth";
 import { AnalysisResultCard } from "@/components/analysis-result-card";
 import { EmptyState, PageHeader, Section } from "@/components/ui-blocks";
 import { YouTubeRefreshPanel } from "@/components/youtube-refresh-panel";
@@ -12,6 +13,8 @@ export default async function ChannelDetailPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  await requirePageUser();
+
   const { id } = await params;
   const identifier = decodeURIComponent(id);
   const analyses = (await getSavedAnalyses()).filter(

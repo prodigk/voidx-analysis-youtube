@@ -1,4 +1,5 @@
 import { getSavedAnalyses } from "@/lib/analysis-store";
+import { requirePageUser } from "@/lib/auth";
 import { analysisTypeLabels } from "@/lib/analysis-types";
 import { InsightBoardList } from "@/components/insight-board-list";
 import { EmptyState, PageHeader, Section, StatCard } from "@/components/ui-blocks";
@@ -6,6 +7,8 @@ import { EmptyState, PageHeader, Section, StatCard } from "@/components/ui-block
 export const dynamic = "force-dynamic";
 
 export default async function InsightsPage() {
+  await requirePageUser();
+
   const analyses = await getSavedAnalyses();
   const counts = analyses.reduce(
     (acc, analysis) => {

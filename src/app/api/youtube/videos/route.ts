@@ -1,7 +1,14 @@
 import { NextResponse } from "next/server";
+import { requireApiUser } from "@/lib/auth";
 import { getPopularVideos, getRecentVideos } from "@/lib/youtube";
 
 export async function GET(request: Request) {
+  const { response } = await requireApiUser();
+
+  if (response) {
+    return response;
+  }
+
   const { searchParams } = new URL(request.url);
   const identifier = searchParams.get("identifier") ?? "";
   const type = searchParams.get("type") ?? "recent";

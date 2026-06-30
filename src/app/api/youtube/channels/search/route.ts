@@ -1,7 +1,14 @@
 import { NextResponse } from "next/server";
+import { requireApiUser } from "@/lib/auth";
 import { searchCandidateChannels } from "@/lib/youtube";
 
 export async function GET(request: Request) {
+  const { response } = await requireApiUser();
+
+  if (response) {
+    return response;
+  }
+
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("query") ?? undefined;
   const categoryId = searchParams.get("categoryId") ?? undefined;

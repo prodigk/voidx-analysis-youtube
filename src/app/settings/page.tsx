@@ -1,7 +1,10 @@
 import { SettingsPanel } from "@/components/settings-panel";
 import { PageHeader } from "@/components/ui-blocks";
+import { requirePageUser } from "@/lib/auth";
 
-export default function SettingsPage() {
+export default async function SettingsPage() {
+  await requirePageUser();
+
   return (
     <div>
       <PageHeader

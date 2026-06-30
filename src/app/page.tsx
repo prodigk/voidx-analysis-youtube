@@ -1,11 +1,14 @@
 import { categories } from "@/lib/categories";
 import { getSavedAnalyses } from "@/lib/analysis-store";
 import { getSavedChannels, getVideoPlans } from "@/lib/app-store";
+import { requirePageUser } from "@/lib/auth";
 import { EmptyState, PageHeader, Section, StatCard } from "@/components/ui-blocks";
 
 export const dynamic = "force-dynamic";
 
 export default async function DashboardPage() {
+  await requirePageUser();
+
   const [analyses, channels, videoPlans] = await Promise.all([
     getSavedAnalyses(),
     getSavedChannels(),
